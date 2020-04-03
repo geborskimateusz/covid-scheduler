@@ -6,7 +6,7 @@ def send_mail(sender_email: str, sender_pwd: str):
     port = 587
     smtp_server = "smtp.gmail.com"
     sender_email = sender_email
-    receiver_email = "kokuzio12@gmail.com"
+    # receiver_email =
     password = sender_pwd
     message = """\
     Subject: COVID-19 daily

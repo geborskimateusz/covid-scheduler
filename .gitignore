@@ -56,3 +56,4 @@ GTK_IM_MODULE=ibus
 _=/usr/bin/env
 env
 .idea
+__pycache__
