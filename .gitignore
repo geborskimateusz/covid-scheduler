@@ -54,3 +54,4 @@ SESSION_MANAGER=local/mateusz-Vostro-5471:@/tmp/.ICE-unix/2139,unix/mateusz-Vost
 LESSOPEN=| /usr/bin/lesspipe %s
 GTK_IM_MODULE=ibus
 _=/usr/bin/env
+env
