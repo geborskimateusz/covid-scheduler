@@ -1,18 +1,24 @@
 import schedule
 import time
 import email_client
-import sys
+import firebase_conf
 
-sender_email = sys.argv[1]
-sender_pwd = sys.argv[2]
+print("Starting covid-scheduler application")
 
+#Initialize firebase configuratiom
+firebase_conf.init_firebase()
+
+#Get email address and password of mail sender
+sender_email = input('Enter sender email:')
+sender_pwd = input('Enter sender password:')
 
 def job():
-    email_client.send_mail(sender_email, sender_pwd)
+    print("Starting scheduled job")
+    email_client.send_notifications(sender_email, sender_pwd)
 
-
-schedule.every(1).seconds.do(job)
-schedule.every().day.at("10:30").do(job)
+#Schedule request
+schedule.every(5).seconds.do(job)
+# schedule.every().day.at("10:30").do(job)
 
 while True:
     schedule.run_pending()
