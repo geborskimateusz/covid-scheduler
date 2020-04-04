@@ -13,6 +13,7 @@ def get_pl_data() -> str:
     url = 'https://api.covid19api.com/live/country/poland/status/confirmed'
     response = requests.get(url).json()[-1]
     date = response['Date']
-    cases = response['Cases']
-    return "Status in Poland on " + date + " cases: " + str(cases)
+    cases = response['Confirmed']
+    deaths = response['Deaths']
+    return "Status in Poland on " + date + " cases: " + str(cases) + ", deaths: " + str(deaths)
 

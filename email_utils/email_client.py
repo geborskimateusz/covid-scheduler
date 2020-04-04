@@ -1,15 +1,8 @@
 import scrapper
 import smtplib, ssl
 import firebase_conf
-
-
-def get_message():
-    return """\
-    Subject: COVID-19 daily
-
-    {}
-    {}
-    """.format(scrapper.get_world_data(), scrapper.get_pl_data())
+from email.mime.text import MIMEText
+from email_utils import mail_template
 
 
 def send_notifications(sender_email: str, sender_pwd: str):
@@ -20,7 +13,11 @@ def send_notifications(sender_email: str, sender_pwd: str):
     sender_email = sender_email
     receivers = firebase_conf.get_receiver_emails()
     password = sender_pwd
-    message = get_message()
+    message = mail_template.get_mail_template()
+
+    my_email = MIMEText(message, "html")
+    my_email["From"] = sender_email
+    my_email["Subject"] = "Hello!"
 
     context = ssl.create_default_context()
     with smtplib.SMTP(smtp_server, port) as server:
@@ -31,7 +28,9 @@ def send_notifications(sender_email: str, sender_pwd: str):
 
         counter = 0
         for receiver_email in receivers:
-            server.sendmail(sender_email, receiver_email, message)
+            my_email["To"] = receiver_email
+
+            server.sendmail(sender_email, receiver_email, my_email.as_string())
             counter += 1
 
         print("Emails sent to {} addresses".format(str(counter)))
