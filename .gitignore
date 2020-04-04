@@ -55,5 +55,7 @@ LESSOPEN=| /usr/bin/lesspipe %s
 GTK_IM_MODULE=ibus
 _=/usr/bin/env
 env
+requirements.txt
 .idea
 __pycache__
+covid-email-notifier-firebase-adminsdk-vrr9h-3c7d66f9b8.json
