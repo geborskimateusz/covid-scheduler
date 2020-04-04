@@ -1,4 +1,3 @@
-import scrapper
 import smtplib, ssl
 import firebase_conf
 from email.mime.text import MIMEText
@@ -17,7 +16,7 @@ def send_notifications(sender_email: str, sender_pwd: str):
 
     my_email = MIMEText(message, "html")
     my_email["From"] = sender_email
-    my_email["Subject"] = "Hello!"
+    my_email["Subject"] = "COVID-19 summary"
 
     context = ssl.create_default_context()
     with smtplib.SMTP(smtp_server, port) as server:

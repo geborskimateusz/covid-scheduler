@@ -87,13 +87,13 @@ def get_mail_template():
                 <li>
                     <ul class="inner-ul">
                         <li class="inner-ul-li-ico">🌎 </li>
-                        <li>{}</li>
+                        <li>""" + scrapper.get_world_data() + """</li>
                     </ul>
                 </li>
                 <li>
                     <ul class="inner-ul">
                         <li class="inner-ul-li-ico">🇵🇱 </li>
-                        <li>{}</li>
+                        <li>""" + scrapper.get_pl_data() + """</li>
                     </ul>
                 </li>
             </ul>
@@ -102,4 +102,4 @@ def get_mail_template():
 </body>
 
 </html>
-    """.format(scrapper.get_world_data(), scrapper.get_pl_data())
+    """

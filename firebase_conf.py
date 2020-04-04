@@ -8,7 +8,7 @@ cred, db = None, None
 def init_firebase():
     try:
         global cred, db
-        cred = credentials.Certificate("./covid-email_utils-notifier-firebase-adminsdk-vrr9h-3c7d66f9b8.json")
+        cred = credentials.Certificate("covid-email-notifier-firebase-adminsdk-vrr9h-3c7d66f9b8.json")
 
         print("Initializing Firebase connection")
         firebase_admin.initialize_app(cred)
