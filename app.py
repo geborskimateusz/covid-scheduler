@@ -19,10 +19,10 @@ def job():
     print("Starting scheduled job")
     email_client.send_notifications(sender_email, sender_pwd)
 
-
-# Schedule request
-schedule.every().day.at("10:55").do(job)
-
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+job()
+# # Schedule request
+# schedule.every().day.at("10:55").do(job)
+#
+# while True:
+#     schedule.run_pending()
+#     time.sleep(1)
