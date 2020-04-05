@@ -13,15 +13,13 @@ sender_email = input('Enter sender email:')
 sender_pwd = input('Enter sender password:')
 
 
-
 def job():
     print("Starting scheduled job")
     email_client.send_notifications(sender_email, sender_pwd)
 
-job()
 # # Schedule request
-# schedule.every().day.at("10:55").do(job)
-#
-# while True:
-#     schedule.run_pending()
-#     time.sleep(1)
+schedule.every().day.at("12:20").do(job)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)

@@ -20,7 +20,7 @@ def get_world_data() -> str:
 def get_pl_data() -> str:
     global poland_status_url
 
-    # print("Fetching data from " + poland_status_url)
+    print("Fetching data from " + poland_status_url)
     response = requests.get(poland_status_url).json()[-1]
     date = response['Date']
     cases = response['Confirmed']
@@ -29,21 +29,20 @@ def get_pl_data() -> str:
 def get_pl_deaths() -> str:
     global poland_status_url
 
-    # print("Fetching data from " + poland_status_url)
+    print("Fetching data from " + poland_status_url)
     response = requests.get(poland_status_url).json()[-1]
     deaths = response['Deaths']
     return "Death rate: <b>{}</b>".format(str(deaths))
 
 def get_difference() -> str:
     global poland_daily_difference_url
-    # print("Fetching data from " + poland_daily_difference_url)
 
+    print("Fetching data from " + poland_daily_difference_url)
     response = requests.get(poland_status_url).json()[-2:]
     yesterday = response[0]
     yesterday_confirmed = yesterday['Confirmed']
     today = response[1]
     today_confirmed = today['Confirmed']
-    cases_difference = str(abs(today_confirmed - yesterday_confirmed))
 
     cases_difference = str(abs(today_confirmed - yesterday_confirmed))
     state = "Compared to yesterday cases <u>{} by {} new cases.</u>"

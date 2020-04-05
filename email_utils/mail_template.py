@@ -80,7 +80,7 @@ def get_mail_template():
 <body>
     <div class="container">
         <div class="header">
-            <h1 class="title">🦠 COVID-19 DAILY SUMARY</h1>
+            <h1 class="title">🦠 COVID-19 DAILY SUMMARY</h1>
         </div>
         <div class="main">
             <div class="main-worldwide">
