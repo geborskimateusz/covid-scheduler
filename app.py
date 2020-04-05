@@ -9,10 +9,9 @@ print("Starting covid-scheduler application")
 firebase_conf.init_firebase()
 
 # Get email_utils address and password of mail sender
-# sender_email = input('Enter sender email:')
-# sender_pwd = input('Enter sender password:')
-sender_email = 'covid.informator@gmail.com'
-sender_pwd = 'nq,}b6nCZ)y=J\,6'
+sender_email = input('Enter sender email:')
+sender_pwd = input('Enter sender password:')
+
 
 
 def job():
