@@ -9,8 +9,10 @@ print("Starting covid-scheduler application")
 firebase_conf.init_firebase()
 
 # Get email_utils address and password of mail sender
-sender_email = input('Enter sender email:')
-sender_pwd = input('Enter sender password:')
+# sender_email = input('Enter sender email:')
+# sender_pwd = input('Enter sender password:')
+sender_email = 'covid.informator@gmail.com'
+sender_pwd = 'nq,}b6nCZ)y=J\,6'
 
 
 def job():
@@ -19,8 +21,7 @@ def job():
 
 
 # Schedule request
-schedule.every(10).seconds.do(job)
-# schedule.every().day.at("10:30").do(job)
+schedule.every().day.at("10:55").do(job)
 
 while True:
     schedule.run_pending()
