@@ -12,7 +12,6 @@ firebase_conf.init_firebase()
 sender_email = input('Enter sender email:')
 sender_pwd = input('Enter sender password:')
 
-
 def job():
     print("Starting scheduled job")
     email_client.send_notifications(sender_email, sender_pwd)
